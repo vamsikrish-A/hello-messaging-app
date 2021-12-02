@@ -33,4 +33,12 @@ public class MessagingAppRestController {
     public String helloWithPostMethod(@RequestBody UserDTO requestUserDetails) {
         return "Hello "+requestUserDetails.getFirstName()+ " " +requestUserDetails.getLastName()+ " from brigdgelabz";
     }
+    @PutMapping(value = "/put/{firstName}")
+    public String helloWithPutMethod(
+            @PathVariable String firstName,
+            @RequestParam (value = "lastName") String lastName
+    ) {
+        return "Hello "+firstName+" "+lastName+" from bridgelabz";
+
+    }
 }
